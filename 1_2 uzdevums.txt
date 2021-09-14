@@ -1,0 +1,88 @@
+Microsoft Windows [Version 10.0.19042.1165]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\larisa gornostajeva>mysql -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> help
+
+For information about MySQL products and services, visit:
+   http://www.mysql.com/
+For developer information, including the MySQL Reference Manual, visit:
+   http://dev.mysql.com/
+To buy MySQL Enterprise support, training, or other products, visit:
+   https://shop.mysql.com/
+
+List of all MySQL commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+ego       (\G) Send command to mysql server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to mysql server.
+help      (\h) Display this help.
+notee     (\t) Don't write into outfile.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+resetconnection(\x) Clean session context.
+query_attributes Sets string parameters (name1 value1 name2 value2 ...) for the next query to pick up.
+
+For server side help, type 'help contents'
+
+mysql> mysql -h gNstudentN.ckh4seomnuyp.eu-west-1.rds.amazonaws.com -P 3306 -u admin -p
+    -> select 'Hello World!';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql -h gNstudentN.ckh4seomnuyp.eu-west-1.rds.amazonaws.com -P 3306 -u admin -p' at line 1
+mysql> select 'Hello World!' say_hello;
++--------------+
+| say_hello    |
++--------------+
+| Hello World! |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select concat('Hello World!', ' I am ', /*=> here goes your name, please :) */'Peter!') say_hello;
++--------------------------+
+| say_hello                |
++--------------------------+
+| Hello World! I am Peter! |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select concat('Hello World!', ' I am ', /*=> here goes your name, please :) */'Peter!', ' And for the record : ', now()) say_hello;
++-------------------------------------------------------------------+
+| say_hello                                                         |
++-------------------------------------------------------------------+
+| Hello World! I am Peter! And for the record : 2021-09-14 19:13:13 |
++-------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select concat('Hello World!', ' I am ', /*=> here goes your name, please :) */'Peter!', ' And for the record : ', now()) say_hello;
++-------------------------------------------------------------------+
+| say_hello                                                         |
++-------------------------------------------------------------------+
+| Hello World! I am Peter! And for the record : 2021-09-14 19:13:30 |
++-------------------------------------------------------------------+
+1 row in set (0.00 sec)
